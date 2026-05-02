@@ -2,11 +2,24 @@
 
 ## Approach
 
-[Describe the overall development approach — e.g. Build
-this project incrementally using a spec-driven workflow.
+Build this project incrementally using a spec-driven workflow.
 Context files define what to build, how to build it, and
 the current state of progress. Always implement against
-these specs — do not infer or invent behavior from scratch.]
+these specs — do not infer or invent behavior from scratch.
+
+Before implementing any feature:
+
+1. Read context files in this order:
+   - `context/project-overview.md` — product definition, goals, features, scope
+   - `context/architecture.md` — system structure, boundaries, storage model
+   - `context/ui-context.md` — theme, colors, typography, component conventions
+   - `context/code-standards.md` — implementation rules and conventions
+   - `context/ai-workflow-rules.md` — this file
+   - `context/progress-tracker.md` — current phase, completed work, next steps
+
+2. Verify the feature is defined in the context files
+3. Implement only what is specified
+4. Update `progress-tracker.md` after completion
 
 ## Scoping Rules
 
@@ -20,10 +33,9 @@ these specs — do not infer or invent behavior from scratch.]
 
 Split an implementation step if it combines:
 
-- [Concern one — e.g. UI changes and background task changes]
-- [Concern two — e.g. Multiple unrelated API routes]
-- [Concern three — e.g. Behavior not clearly defined in
-  the context files]
+- UI changes and background task changes
+- Multiple unrelated API routes
+- Behavior not clearly defined in the context files
 
 If a change cannot be verified end to end quickly,
 the scope is too broad — split it.
@@ -41,8 +53,9 @@ the scope is too broad — split it.
 
 Do not modify the following unless explicitly instructed:
 
-- [e.g. components/ui/* — generated UI library components]
-- [e.g. Any third-party library internals]
+- `components/ui/*` — shadcn/ui generated components (modify only when updating the design system)
+- Third-party library internals
+- Configuration files without explicit context file changes
 
 ## Keeping Docs in Sync
 
