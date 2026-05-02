@@ -13,7 +13,7 @@ Add these shadcn components:
 - Textarea
 - ScrollArea
 
-Do not modify the generated `components/ui/*` files after installation.
+The components in `components/ui/*` are custom shadcn-style wrappers built on `@base-ui/react` (not the default Radix-based shadcn generated output). They are part of the project source and may be modified as needed. This project uses shadcn/ui v4 conventions but the primitives come from `@base-ui/react`.
 
 Also install `lucide-react`.
 

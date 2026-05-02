@@ -3,17 +3,17 @@
 ## Approach
 
 Build this project incrementally using a spec-driven workflow.
-Context files define what to build, how to build it, and
-the current state of progress. Always implement against
-these specs — do not infer or invent behavior from scratch.
+Before any implementation or architectural decision, read the
+context files in this order:
+1. `context/project-overview.md` — product definition and scope
+2. `context/architecture.md` — stack, boundaries, and invariants
+3. `context/ui-context.md` — theme, typography, component conventions
+4. `context/code-standards.md` — implementation rules
+5. `context/ai-workflow-rules.md` — this file
+6. `context/progress-tracker.md` — current phase and next steps
 
-Read context files in this order before implementing:
-1. `context/project-overview.md` — product definition, goals, features, and scope
-2. `context/architecture.md` — system structure, boundaries, storage model, and invariants
-3. `context/ui-context.md` — theme, colors, typography, and component conventions
-4. `context/code-standards.md` — implementation rules and conventions
-5. `context/ai-workflow-rules.md` — development workflow and scoping rules
-6. `context/progress-tracker.md` — current phase, completed work, and next steps
+Always implement against these specs. Do not infer or invent
+behavior that is not defined here.
 
 ## Scoping Rules
 
@@ -27,8 +27,8 @@ Read context files in this order before implementing:
 
 Split an implementation step if it combines:
 
-- UI changes and background task changes
-- Multiple unrelated API routes or data models
+- UI changes and data/API changes
+- Multiple unrelated feature areas or system boundaries
 - Behavior not clearly defined in the context files
 
 If a change cannot be verified end to end quickly,
@@ -47,8 +47,9 @@ the scope is too broad — split it.
 
 Do not modify the following unless explicitly instructed:
 
-- `components/ui/*` — generated shadcn/ui components
-- Third-party library internals
+- `node_modules/` — third-party library internals
+- `app/globals.css` — global CSS; changes here affect the
+  entire design system, coordinate before touching
 
 ## Keeping Docs in Sync
 

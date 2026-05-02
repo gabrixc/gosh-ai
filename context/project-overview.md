@@ -1,76 +1,61 @@
-# Project Editor
+# Gosh AI
 
 ## Overview
 
-Project Editor is a web-based IDE and project management tool for developers and technical teams. It provides a modern, collaborative environment for creating, editing, and organizing projects with file management, syntax highlighting, and real-time editing capabilities. The application solves the problem of needing a lightweight, browser-accessible development environment that can be used anywhere without local setup.
+Gosh AI is an AI-powered project editor for the web. It lets users create and
+manage projects, each with an associated editor workspace. The application
+targets individuals and small teams who want an AI-assisted environment for
+writing, planning, or generating content. The exact AI capabilities and
+collaboration model are to be defined in upcoming feature specs.
 
 ## Goals
 
-1. Enable users to create and manage multiple projects with persistent storage within 3 clicks from the home screen
-2. Provide a functional text editor with syntax awareness for at least 5 common file types (JavaScript, TypeScript, HTML, CSS, Markdown)
-3. Achieve a responsive, accessible interface that meets WCAG 2.1 AA standards for keyboard navigation and screen reader support
+1. Users can create, open, and manage projects from a sidebar panel
+2. The editor workspace provides a focused, distraction-free environment
+3. AI assistance is integrated directly into the editing flow
 
 ## Core User Flow
 
-1. User opens the application and sees the editor interface with navbar and project sidebar
-2. User clicks "New Project" in the sidebar to create a project
-3. User enters project name and description in the creation dialog
-4. User's new project appears in the "My Projects" list
-5. User selects the project to open it in the editor
-6. User creates or edits files within the project
-7. User's changes are automatically saved to persistent storage
-8. User can switch between projects or share them with collaborators
+1. User opens the app and sees the editor chrome with a project sidebar
+2. User creates or selects a project from the sidebar
+3. User opens the project in the editor workspace
+4. User writes or generates content with AI assistance
+5. User saves and returns to the project list
 
 ## Features
 
 ### Project Management
 
-- Create new projects with name and optional description
-- List all user projects in the sidebar with My Projects and Shared tabs
-- Open and switch between projects
-- Delete or archive projects
-- Share projects with other users (view or edit permissions)
+- Project list with "My Projects" and "Shared" views
+- Create new project action
+- Open project in editor
 
-### Editor Features
+### Editor
 
-- Multi-file editing with tab interface
-- Syntax highlighting for JavaScript, TypeScript, HTML, CSS, Markdown, JSON
-- File tree navigation within project
-- Create, rename, and delete files and folders
-- Auto-save functionality
-- Keyboard shortcuts for common operations
+- Fixed top navbar with sidebar toggle
+- Slide-in project sidebar overlay
+- Editor content area (upcoming)
 
-### UI and Accessibility
+### AI Integration
 
-- Responsive layout that works on desktop and tablet
-- Dark mode theme with high contrast colors
-- Keyboard navigation for all interactive elements
-- Screen reader announcements for state changes
-- Focus management for modals and sidebars
+- AI-assisted writing and generation (upcoming — to be defined in feature specs)
 
 ## Scope
 
 ### In Scope
 
-- Client-side project and file management with browser storage
-- Text editor with syntax highlighting for common web languages
-- Project sidebar with create, list, and open functionality
-- Basic file operations (create, edit, delete, rename)
-- Responsive design for desktop and tablet viewports
-- Accessibility features (keyboard nav, ARIA labels, focus management)
+- Web application built with Next.js (no native mobile app)
+- Project CRUD and editor chrome
+- AI-assisted text/content editing
 
 ### Out of Scope
 
-- User authentication and multi-user accounts (phase 2)
-- Real-time collaborative editing (phase 2)
-- Version control or git integration
-- Terminal or command execution
-- Backend server or database persistence (starting with browser storage)
-- Mobile phone optimization (tablet and above only)
-- Advanced editor features (code completion, refactoring, debugging)
+- Native mobile apps
+- Real-time collaborative editing (may revisit later)
+- File system access or local file editing
 
 ## Success Criteria
 
-1. A user can create a new project, add at least one file, edit its contents, and see the changes persist after closing and reopening the sidebar
-2. All interactive elements (buttons, tabs, dialogs) are keyboard-accessible and announce their state to screen readers correctly
-3. The editor can load and syntax-highlight a 1000-line TypeScript file without noticeable lag (under 200ms initial render)
+1. A user can create a project and open it in the editor without errors
+2. The editor chrome (navbar, sidebar) renders correctly on desktop viewports
+3. AI assistance produces a visible result within the editor workspace
