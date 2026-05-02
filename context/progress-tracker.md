@@ -9,15 +9,20 @@ change.
 
 ## Current Goal
 
-- Editor chrome: navbar and project sidebar shell
+- Define next feature spec and implement editor content area
 
 ## Completed
 
 - `01-design-system.md` — shadcn/ui initialized (Tailwind v4), components added: Button, Card, Dialog, Input, Tabs, Textarea, ScrollArea; lucide-react installed; lib/utils.ts with cn(); dark class applied to html element
 - `02-editor.md` — EditorNavbar (fixed top bar, sidebar toggle with PanelLeftOpen/Close icons); ProjectSidebar (floating overlay, slides from left, Projects title + close button, My Projects / Shared tabs with empty states, New Project button); dialog pattern ready via existing shadcn Dialog
-- `03-auth.md` (Task 1) — Clerk infrastructure: installed @clerk/nextjs@7.3.0 + @clerk/ui; added sign-in/sign-up env vars to .env.local; created proxy.ts (Next.js 16 Clerk middleware) protecting all routes except /sign-in and /sign-up; wrapped root layout with ClerkProvider + dark theme from @clerk/ui/themes
-- `03-auth.md` (Task 2) — Auth pages: created app/sign-in/[[...sign-in]]/page.tsx and app/sign-up/[[...sign-up]]/page.tsx; two-panel layout (left branding panel hidden on mobile, right Clerk form); all colors use CSS custom property tokens; Clerk appearance variables mapped to app CSS vars; dark theme inherited from ClerkProvider
-- `03-auth.md` (Task 2 code review) — Extracted shared auth code: components/auth/auth-layout.tsx (two-panel layout), components/auth/clerk-appearance.ts (Appearance config typed as ClerkAppearanceTheme from @clerk/shared/types); inline style props replaced with Tailwind classes; `<p>` for "Gosh AI" heading changed to `<h1>`; page metadata added to both auth pages; appearance variables updated to Clerk v7 names (colorForeground, colorMutedForeground, colorInput, colorInputForeground)
+- `03-auth.md` — Clerk auth fully wired:
+  - Installed `@clerk/nextjs` v7.3.0 + `@clerk/ui` v1.7.0
+  - `proxy.ts` at project root: Clerk middleware protecting all routes except `/sign-in` and `/sign-up`
+  - Root layout wrapped with `ClerkProvider` + dark theme from `@clerk/ui/themes`
+  - `app/sign-in/[[...sign-in]]/page.tsx` and `app/sign-up/[[...sign-up]]/page.tsx`: two-panel layout (left branding hidden on mobile, right Clerk form); all colors via CSS tokens
+  - Shared `components/auth/auth-layout.tsx` and `components/auth/clerk-appearance.ts`
+  - Root `/` redirects authenticated → `/editor`, unauthenticated → `/sign-in`
+  - `UserButton` added to editor navbar right section
 
 ## In Progress
 
@@ -25,7 +30,7 @@ change.
 
 ## Next Up
 
-- Feature specs beyond editor chrome
+- Feature specs beyond auth (editor content area)
 
 ## Open Questions
 
@@ -33,7 +38,7 @@ change.
 
 ## Architecture Decisions
 
-- None yet.
+- Auth: Clerk (`@clerk/nextjs` v7) — all routes protected by default, public routes via env vars
 
 ## Session Notes
 
