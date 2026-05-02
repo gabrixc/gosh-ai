@@ -9,16 +9,17 @@ change.
 
 ## Current Goal
 
-- Editor chrome: navbar and project sidebar shell
+- Implement editor content area and basic project management features
 
 ## Completed
 
 - `01-design-system.md` — shadcn/ui initialized (Tailwind v4), components added: Button, Card, Dialog, Input, Tabs, Textarea, ScrollArea; lucide-react installed; lib/utils.ts with cn(); dark class applied to html element
 - `02-editor.md` — EditorNavbar (fixed top bar, sidebar toggle with PanelLeftOpen/Close icons); ProjectSidebar (floating overlay, slides from left, Projects title + close button, My Projects / Shared tabs with empty states, New Project button); dialog pattern ready via existing shadcn Dialog
+- Editor chrome: navbar and project sidebar shell completed with accessibility improvements
 
 ## In Progress
 
-- None
+- Editor content area and basic project management features
 
 ## Next Up
 
