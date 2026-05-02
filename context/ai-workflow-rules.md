@@ -2,11 +2,18 @@
 
 ## Approach
 
-[Describe the overall development approach — e.g. Build
-this project incrementally using a spec-driven workflow.
+Build this project incrementally using a spec-driven workflow.
 Context files define what to build, how to build it, and
 the current state of progress. Always implement against
-these specs — do not infer or invent behavior from scratch.]
+these specs — do not infer or invent behavior from scratch.
+
+Read context files in this order before implementing:
+1. `context/project-overview.md` — product definition, goals, features, and scope
+2. `context/architecture.md` — system structure, boundaries, storage model, and invariants
+3. `context/ui-context.md` — theme, colors, typography, and component conventions
+4. `context/code-standards.md` — implementation rules and conventions
+5. `context/ai-workflow-rules.md` — development workflow and scoping rules
+6. `context/progress-tracker.md` — current phase, completed work, and next steps
 
 ## Scoping Rules
 
@@ -20,10 +27,9 @@ these specs — do not infer or invent behavior from scratch.]
 
 Split an implementation step if it combines:
 
-- [Concern one — e.g. UI changes and background task changes]
-- [Concern two — e.g. Multiple unrelated API routes]
-- [Concern three — e.g. Behavior not clearly defined in
-  the context files]
+- UI changes and background task changes
+- Multiple unrelated API routes or data models
+- Behavior not clearly defined in the context files
 
 If a change cannot be verified end to end quickly,
 the scope is too broad — split it.
@@ -41,8 +47,8 @@ the scope is too broad — split it.
 
 Do not modify the following unless explicitly instructed:
 
-- [e.g. components/ui/* — generated UI library components]
-- [e.g. Any third-party library internals]
+- `components/ui/*` — generated shadcn/ui components
+- Third-party library internals
 
 ## Keeping Docs in Sync
 
