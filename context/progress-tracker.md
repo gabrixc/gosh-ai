@@ -17,6 +17,7 @@ change.
 - `02-editor.md` — EditorNavbar (fixed top bar, sidebar toggle with PanelLeftOpen/Close icons); ProjectSidebar (floating overlay, slides from left, Projects title + close button, My Projects / Shared tabs with empty states, New Project button); dialog pattern ready via existing shadcn Dialog
 - `03-auth.md` (Task 1) — Clerk infrastructure: installed @clerk/nextjs@7.3.0 + @clerk/ui; added sign-in/sign-up env vars to .env.local; created proxy.ts (Next.js 16 Clerk middleware) protecting all routes except /sign-in and /sign-up; wrapped root layout with ClerkProvider + dark theme from @clerk/ui/themes
 - `03-auth.md` (Task 2) — Auth pages: created app/sign-in/[[...sign-in]]/page.tsx and app/sign-up/[[...sign-up]]/page.tsx; two-panel layout (left branding panel hidden on mobile, right Clerk form); all colors use CSS custom property tokens; Clerk appearance variables mapped to app CSS vars; dark theme inherited from ClerkProvider
+- `03-auth.md` (Task 2 code review) — Extracted shared auth code: components/auth/auth-layout.tsx (two-panel layout), components/auth/clerk-appearance.ts (Appearance config typed as ClerkAppearanceTheme from @clerk/shared/types); inline style props replaced with Tailwind classes; `<p>` for "Gosh AI" heading changed to `<h1>`; page metadata added to both auth pages; appearance variables updated to Clerk v7 names (colorForeground, colorMutedForeground, colorInput, colorInputForeground)
 
 ## In Progress
 
