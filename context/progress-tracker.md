@@ -23,7 +23,8 @@ change.
   - `app/sign-in/[[...sign-in]]/page.tsx` and `app/sign-up/[[...sign-up]]/page.tsx`: two-panel layout (left branding hidden on mobile, right Clerk form); all colors via CSS tokens
   - Shared `components/auth/auth-layout.tsx` and `components/auth/clerk-appearance.ts`
   - Root `/` redirects authenticated → `/editor`, unauthenticated → `/sign-in`
-  - `UserButton` added to editor navbar right section
+  - `UserButton` added to editor navbar right section (handles sign-out via dropdown)
+- `current-issues.md` — created `app/editor/page.tsx`: composes EditorNavbar + ProjectSidebar with "Coming soon" placeholder; resolves /editor 404 and exposes UserButton sign-out
 
 ## In Progress
 
@@ -31,7 +32,7 @@ change.
 
 ## Next Up
 
-- Feature specs beyond auth (editor content area)
+- Editor content area (real editing functionality)
 
 ## Open Questions
 
